@@ -1,20 +1,36 @@
-.vide 
-{
+.consomme {
     background: none;
     display: inline-flex;
-    height: 20px;
-    width: 20px;
-    margin: 2px;
+    height: 15px;
+    width: 15px;
+    margin: 1px;
     border-style: solid;
     border-width: 1px;
 }
 
-.plein 
-{
-    background: black;
+.restantPourRetraite {
+    background: #E59A17;
     display: inline-flex;
-    height: 20px;
-    width: 20px;
-    margin: 2px;
+    height: 15px;
+    width: 15px;
+    margin: 1px;
+    border-style: solid;
+    border-width: 1px;
 }
 
+.restantApresRetraite {
+    background: #33C4FF;
+    display: inline-flex;
+    height: 15px;
+    width: 15px;
+    margin: 1px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.numLigne {
+    display: inline-block;
+    width: 20px; /* Ajuste la largeur selon tes besoins */
+    text-align: left;
+    margin: 1px;
+}
