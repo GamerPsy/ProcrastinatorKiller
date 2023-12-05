@@ -12,6 +12,21 @@
 
   <h1 class="text-center">Memento mori</h1>
   <div>
+    <div id="control-window">
+      <label>
+          <input type="checkbox" id="chkRestantApresRetraite" checked>
+          Temps restant après retraite
+      </label>
+      <label>
+          <input type="checkbox" id="chkRestantPourRetraite" checked>
+          Temps restant avant retraite
+      </label>
+      <label>
+          <input type="checkbox" id="chkConsomme" checked>
+          Temps passé/consommé
+      </label>
+  </div>
+
     <script src="mementoMori.js"></script>
     <script>
       dessineMementoMori(ageActuel, ageRetraite, esperanceVie);

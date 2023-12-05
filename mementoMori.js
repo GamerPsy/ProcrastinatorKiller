@@ -73,3 +73,4 @@ function dessineMementoMori(ageActuel, ageRetraite, esperanceVie) {
     dessineLignes(deuxiemeSection, premiereSection + 1, "restantPourRetraite")
     dessineLignes(troisiemeSection, troisiemeSection + 1, "consomme")
 }
+
