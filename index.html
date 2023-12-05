@@ -9,25 +9,37 @@
 </head>
 
 <body class="centrer">
-
+  <script src="mementoMori.js"></script>
   <h1 class="text-center">Memento mori</h1>
   <div>
     <div id="control-window">
-      <label>
-          <input type="checkbox" id="chkRestantApresRetraite" checked>
-          Temps restant après retraite
-      </label>
-      <label>
-          <input type="checkbox" id="chkRestantPourRetraite" checked>
-          Temps restant avant retraite
-      </label>
-      <label>
-          <input type="checkbox" id="chkConsomme" checked>
-          Temps passé/consommé
-      </label>
-  </div>
+      <ul>
+        <li>
+          <script>document.write(premiereSection);</script> années avant le dernier acte.
+        </li>
+        <li>
+          <script>document.write(deuxiemeSection);</script> années avant la retraite.
+        </li>
+        <li>
+          <script>document.write(troisiemeSection);</script> années sont déjà passées.
+        </li>
+      </ul>
 
-    <script src="mementoMori.js"></script>
+      <label>
+        <input type="checkbox" id="chkRestantApresRetraite" checked>
+        Temps restant après retraite
+      </label>
+      <label>
+        <input type="checkbox" id="chkRestantPourRetraite" checked>
+        Temps restant avant retraite
+      </label>
+      <label>
+        <input type="checkbox" id="chkConsomme" checked>
+        Temps passé/consommé
+      </label>
+    </div>
+
+
     <script>
       dessineMementoMori(ageActuel, ageRetraite, esperanceVie);
       document.write("" + screen.width + "*" + screen.height + "");

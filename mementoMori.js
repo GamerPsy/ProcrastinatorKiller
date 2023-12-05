@@ -3,6 +3,9 @@ var ageRetraite = 65;
 var esperanceVie = 90;
 var dateDuJour = new Date();
 var ageActuel = dateDuJour.getFullYear() - dateNaissance.getFullYear();
+var premiereSection = esperanceVie - ageRetraite;
+var deuxiemeSection = ageRetraite - ageActuel;
+var troisiemeSection = ageActuel;
 
 // Vérification si l'anniversaire a déjà eu lieu cette année
 if (dateDuJour.getMonth() < dateNaissance.getMonth() || (dateDuJour.getMonth() === dateNaissance.getMonth() && dateDuJour.getDate() < dateNaissance.getDate())) {
@@ -65,12 +68,39 @@ function dessineLignes(nbLignes, numDepartLigne, type) {
 }
 
 function dessineMementoMori(ageActuel, ageRetraite, esperanceVie) {
-    let premiereSection = esperanceVie - ageRetraite;
-    let deuxiemeSection = ageRetraite - ageActuel;
-    let troisiemeSection = ageActuel;
 
+
+    document.write('<div id="bleu">')
     dessineLignes(premiereSection, 1, "restantApresRetraite")
+    document.write('</div>')
+    document.write('<div id="orange">')
     dessineLignes(deuxiemeSection, premiereSection + 1, "restantPourRetraite")
+    document.write('</div>')
+    document.write('<div id="blanc">')
     dessineLignes(troisiemeSection, troisiemeSection + 1, "consomme")
+    document.write('</div>')
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const chkRestantApresRetraite = document.getElementById('chkRestantApresRetraite');
+    const chkRestantPourRetraite = document.getElementById('chkRestantPourRetraite');
+    const chkConsomme = document.getElementById('chkConsomme');
+
+    chkRestantApresRetraite.addEventListener('change', toggleVisibility);
+    chkRestantPourRetraite.addEventListener('change', toggleVisibility);
+    chkConsomme.addEventListener('change', toggleVisibility);
+
+    function toggleVisibility() {
+        const divRestantApresRetraite = document.getElementById('bleu');
+        const divRestantPourRetraite = document.getElementById('orange');
+        const divConsomme = document.getElementById('blanc');
+
+        toggleDivVisibility(divRestantApresRetraite, chkRestantApresRetraite.checked);
+        toggleDivVisibility(divRestantPourRetraite, chkRestantPourRetraite.checked);
+        toggleDivVisibility(divConsomme, chkConsomme.checked);
+    }
+
+    function toggleDivVisibility(div, show) {
+        div.style.display = show ? 'block' : 'none';
+    }
+});
